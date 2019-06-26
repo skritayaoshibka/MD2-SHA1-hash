@@ -1,0 +1,83 @@
+﻿<Window x:Class="MD2_Visual.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MD2_Visual"
+        mc:Ignorable="d"
+        Title="MD2" Height="569.728" Width="423.636" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}">
+            <ControlTemplate.Resources>
+                <Storyboard x:Key="OnClick1">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                        <EasingColorKeyFrame KeyTime="0" Value="#FFBD596A"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="OnMouseLeftButtonDown1"/>
+                <Storyboard x:Key="OnMouseLeftButtonDown2">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                        <EasingColorKeyFrame KeyTime="0" Value="#FFC70E2E"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="OnMouseEnter1">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                        <EasingColorKeyFrame KeyTime="0" Value="#BFBD596A"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="OnMouseLeave1"/>
+                <Storyboard x:Key="OnMouseLeave2"/>
+                <Storyboard x:Key="OnMouseLeave3"/>
+                <Storyboard x:Key="OnMouseEnter2">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                        <EasingColorKeyFrame KeyTime="0" Value="#FFD65A6F"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="OnMouseLeave4">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                        <EasingColorKeyFrame KeyTime="0" Value="#FF101011"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="OnMouseLeave5">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                        <EasingColorKeyFrame KeyTime="0" Value="#FFD16F80"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="OnMouseLeftButtonDown3">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                        <EasingColorKeyFrame KeyTime="0" Value="#FFCF4B61"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="OnMouseLeftButtonUp1">
+                    <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                        <EasingColorKeyFrame KeyTime="0" Value="#FFCF4B61"/>
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+                <Storyboard x:Key="OnMouseLeftButtonUp2"/>
+            </ControlTemplate.Resources>
+            <Grid>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30">
+                    <Rectangle x:Name="rectangle" Fill="#FFBD596A" Stroke="Black" StrokeThickness="0"/>
+                </Border>
+                <Path Data="M0,0 L30,30" Fill="#FF6E575B" HorizontalAlignment="Left" Height="30" Margin="0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="30"/>
+                <Path Data="M0,30 L30,0" Fill="#FF6E575B" HorizontalAlignment="Left" Height="30" Margin="0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="30" StrokeThickness="2"/>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Label Panel.ZIndex="1
+               " Content="MD2 &amp; SHA1" HorizontalAlignment="Left" Height="107" Margin="96,0,0,0" Width="236" FontSize="22" FontWeight="Bold" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FFAA3015"/>
+        <Label Content="Текст" HorizontalAlignment="Left" Margin="10,122,0,0" Height="59" Width="110" FontFamily="Microsoft YaHei UI" FontSize="36" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="textbox1" HorizontalAlignment="Left" Height="59" TextWrapping="Wrap" Width="270" Margin="125,122,0,0" FontSize="24" BorderThickness="2" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="MD2" HorizontalAlignment="Left" Margin="10,227,0,0" Height="81" Width="110" FontFamily="Microsoft YaHei UI" FontSize="36" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="textbox2" HorizontalAlignment="Left" Height="81" TextWrapping="Wrap" Width="270" Margin="125,227,0,0" FontSize="24" BorderThickness="2" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+        <Button x:Name="button1" Content="Вычислить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="10,484,0,0" Height="45" BorderThickness="2" FontSize="18" IsDefault="True" Click="Button1_Click"/>
+        <Button x:Name="button2" Content="Очистить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="316,484,0,0" Height="45" BorderThickness="2" FontSize="18" Click="Button2_Click"/>
+        <TextBox x:Name="textbox3" HorizontalAlignment="Left" Height="81" TextWrapping="Wrap" Width="270" Margin="125,354,0,0" FontSize="24" BorderThickness="2" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+        <Label Content="SHA1" HorizontalAlignment="Left" Margin="10,354,0,0" Height="81" Width="110" FontFamily="Microsoft YaHei UI" FontSize="36" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <DockPanel HorizontalAlignment="Left" Height="47" LastChildFill="False" VerticalAlignment="Top" Width="423.636" Background="#FF363636"/>
+        <DockPanel Height="107" LastChildFill="False" Margin="92,0,91.636,0" VerticalAlignment="Top" Background="#FF363636"/>
+        <Button x:Name="button3" Content="OFF" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Margin="386,5,0,0" Height="32" IsCancel="True" Click="Button3_Click" Background="#FFDD5246" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
